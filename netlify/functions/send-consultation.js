@@ -1,0 +1,257 @@
+const nodemailer = require('nodemailer');
+
+exports.handler = async (event) => {
+  if (event.httpMethod !== 'POST') {
+    return { statusCode: 405, body: 'Method Not Allowed' };
+  }
+
+  try {
+    const { fullName, gender, dob, phone, email, issue } = JSON.parse(event.body);
+
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      subject: `📋 New Consultation Form Submission from ${fullName}`,
+      html: `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <style>
+            * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+            }
+            body {
+              font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+              background-color: #f5f7fa;
+              line-height: 1.6;
+            }
+            .container {
+              max-width: 600px;
+              margin: 0 auto;
+              background-color: white;
+              border-radius: 12px;
+              overflow: hidden;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+            .header {
+              background: linear-gradient(135deg, #3E517A 0%, #CC76A1 100%);
+              color: white;
+              padding: 40px 30px;
+              text-align: center;
+            }
+            .header h1 {
+              font-size: 28px;
+              font-weight: 700;
+              margin-bottom: 8px;
+              letter-spacing: -0.5px;
+            }
+            .header p {
+              font-size: 14px;
+              opacity: 0.95;
+              font-weight: 300;
+            }
+            .content {
+              padding: 40px 30px;
+            }
+            .greeting {
+              margin-bottom: 30px;
+            }
+            .greeting p {
+              font-size: 16px;
+              color: #333;
+              margin-bottom: 5px;
+            }
+            .greeting strong {
+              color: #CC76A1;
+              font-weight: 700;
+            }
+            .details-grid {
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 20px;
+              margin: 30px 0;
+              background-color: #f8f9fa;
+              padding: 25px;
+              border-radius: 8px;
+            }
+            .detail-item {
+              border-left: 3px solid #CC76A1;
+              padding-left: 15px;
+            }
+            .detail-label {
+              font-size: 12px;
+              font-weight: 700;
+              color: #999;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+              margin-bottom: 6px;
+            }
+            .detail-value {
+              font-size: 15px;
+              color: #333;
+              font-weight: 600;
+            }
+            .issue-section {
+              margin-top: 30px;
+              padding-top: 30px;
+              border-top: 2px solid #e0e0e0;
+            }
+            .issue-label {
+              font-size: 12px;
+              font-weight: 700;
+              color: #999;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+              margin-bottom: 12px;
+            }
+            .issue-content {
+              background-color: #f8f9fa;
+              padding: 20px;
+              border-radius: 8px;
+              border-left: 3px solid #CC76A1;
+              color: #333;
+              font-size: 15px;
+              line-height: 1.7;
+            }
+            .divider {
+              height: 1px;
+              background-color: #e0e0e0;
+              margin: 30px 0;
+            }
+            .footer {
+              background-color: #3E517A;
+              color: white;
+              padding: 25px 30px;
+              text-align: center;
+              font-size: 13px;
+            }
+            .footer p {
+              margin-bottom: 8px;
+            }
+            .footer-link {
+              color: #CC76A1;
+              text-decoration: none;
+              font-weight: 600;
+            }
+            .icon {
+              display: inline-block;
+              width: 24px;
+              height: 24px;
+              background: #CC76A1;
+              color: white;
+              border-radius: 50%;
+              line-height: 24px;
+              text-align: center;
+              font-size: 14px;
+              margin-right: 8px;
+              font-weight: bold;
+            }
+            @media (max-width: 600px) {
+              .details-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+              }
+              .header h1 {
+                font-size: 24px;
+              }
+              .container {
+                border-radius: 0;
+              }
+            }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <!-- Header -->
+            <div class="header">
+              <h1>📋 New Consultation Submission</h1>
+              <p>Swarn Homoeopathy</p>
+            </div>
+
+            <!-- Content -->
+            <div class="content">
+              <div class="greeting">
+                <p>Hello,</p>
+                <p>You have received a new consultation form submission from <strong>${fullName}</strong>. Here are the details:</p>
+              </div>
+
+              <!-- Patient Details Grid -->
+              <div class="details-grid">
+                <div class="detail-item">
+                  <div class="detail-label">👤 Full Name</div>
+                  <div class="detail-value">${fullName}</div>
+                </div>
+                <div class="detail-item">
+                  <div class="detail-label">⚧ Gender</div>
+                  <div class="detail-value">${gender}</div>
+                </div>
+                <div class="detail-item">
+                  <div class="detail-label">📅 Date of Birth</div>
+                  <div class="detail-value">${dob}</div>
+                </div>
+                <div class="detail-item">
+                  <div class="detail-label">📞 Phone Number</div>
+                  <div class="detail-value">${phone}</div>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="detail-item" style="border-left: 3px solid #CC76A1; padding-left: 15px; margin-bottom: 20px;">
+                <div class="detail-label">📧 Email Address</div>
+                <div class="detail-value">
+                  <a href="mailto:${email}" style="color: #CC76A1; text-decoration: none;">${email}</a>
+                </div>
+              </div>
+
+              <!-- Issue Section -->
+              <div class="issue-section">
+                <div class="issue-label">🏥 Patient's Issue</div>
+                <div class="issue-content">
+                  ${issue}
+                </div>
+              </div>
+
+              <div class="divider"></div>
+
+              <!-- Call to Action -->
+              <div style="text-align: center; margin-top: 30px;">
+                <p style="color: #666; font-size: 14px; margin-bottom: 15px;">Please review this submission and contact the patient at your earliest convenience.</p>
+              </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+              <p><strong>Swarn Homoeopathy</strong></p>
+              <p>Natural & Health Solution</p>
+              <p style="margin-top: 12px; opacity: 0.8;">This is an automated email from your consultation form system.</p>
+            </div>
+          </div>
+        </body>
+        </html>
+      `,
+    };
+
+    await transporter.sendMail(mailOptions);
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ success: true, message: 'Email sent successfully' }),
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ success: false, error: error.message }),
+    };
+  }
+};
