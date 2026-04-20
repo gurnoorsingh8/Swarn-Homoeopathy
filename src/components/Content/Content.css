@@ -1,0 +1,158 @@
+
+.first-container {
+    background-color: #e7ebf5;
+  
+    .first-content {
+      display: flex;
+      width: 95vw;
+    }
+  }
+  
+  .content {
+    font-size: 1.2rem;
+    margin-top: 12rem;
+    margin-bottom: 15rem;
+    margin-left: 15rem;
+    width: 35vw;
+  }
+  
+  .book-button {
+    margin-top: 2.5rem;
+    width: 13rem;
+    height: 3.5rem;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    background-color: #CC76A1;
+    border: none;
+    padding: 13px, 40px, 13px, 40px;
+  }
+
+  .book-button:hover {
+    background-color: #cb6799;
+  }
+  
+  .image {
+    font-size: 1.2rem;
+    margin-top: 10rem;
+    margin-left: 5rem;
+    width: 35vw;
+  
+    img{
+      width: 25rem;
+      height: 25rem;
+      border-radius: 20px;
+      content-fit: contain;
+    }
+  }
+  
+  .divider-content {
+    background-color: #C3CFEA;
+    color: #3E517A;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    .text {
+      padding: 40px 0;
+      width: 50vw;
+    }
+  }
+  
+  
+  .second-container {
+    background-color: #e7ebf5;
+  
+    .testimonial-title {
+      padding-top: 30px;
+      height: 15vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+    }
+  
+    .testimonials {
+      padding: 0 0 80px 0;
+      border-bottom: none;
+  
+      .testimonials-container {
+        width: 50%;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 10px;
+      }
+  
+      .testimonials-content-item-image {
+        .carousel-image {
+          width: 180px;
+          height: 180px;
+          border-radius: 5px;
+        }
+      }
+  
+      .testimonials-content-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px;
+      }
+      
+      .testimonials-content-item-text {
+        padding-left: 20px;
+        
+        .testimonial-text {
+          font-size: 0.9rem;
+        }
+    
+        .testimonial-contact-name {
+          font-size: 0.8rem;
+          font-weight: 600;
+          margin-bottom: 0 !important;
+        }
+        
+        .testimonial-contact-location {
+          font-size: 0.8rem;
+          margin-top: 0 !important;
+        }
+      }
+    }
+  }
+  
+  .third-container {
+    background-color: #C3CFEA;
+  
+    .book-appointment {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 95vw;
+  
+      .appointment-image {
+        width: 35vw;
+        object-fit: contain;
+  
+        img{
+          width: 20rem;
+          height: 20rem;
+          margin-left: 8rem;
+          border-radius: 20px;
+        }
+      }
+  
+      .appointment-content {
+        margin-top: 8rem;
+        margin-bottom: 8rem;
+        margin-left: 5rem;
+        width: 35vw;
+  
+        h1 {
+          width: 90%;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  

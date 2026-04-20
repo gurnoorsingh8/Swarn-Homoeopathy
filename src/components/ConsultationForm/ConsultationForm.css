@@ -1,0 +1,140 @@
+/* Background
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+    padding: 20px;
+  }
+  
+  /* Form Container
+  .form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+  }
+   */
+
+   .form-container {
+    padding: 2rem 3rem;
+
+    .form-fields {
+        margin-bottom: 40px;
+
+        .gender-options label {
+            font-weight: 500;
+        }
+
+        .input-row {
+            padding-right: 10px;
+        }
+
+        .input-row input {
+            width: 85%;
+        }
+
+        textarea {
+            width: 95% !important;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: rgba(235, 230, 230, 0.459);
+            transition: border 0.3s;
+        }
+
+        .gender-options {
+            width: 50%;
+
+            input {
+                font-size: 1.1rem;
+                margin-right: 5px;
+            }
+        }
+
+        .radio-button:checked {
+            accent-color: #CC76A1;
+        }
+    }
+   }
+  
+  /* Labels */
+  .form-container label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    display: block;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Input Fields */
+  .form-container input,
+  .form-container select {
+    width: 40%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: rgba(235, 230, 230, 0.459);
+    transition: border 0.3s;
+  }
+  
+  /* Focus effect */
+  .form-container input:focus,
+  .form-container select:focus,
+  .form-container textarea:focus {
+    border: 1px solid #3E517A;
+    outline: none;
+  }
+  
+  /* Gender Radio Buttons */
+  .gender-options {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+  
+  .gender-options label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+  }
+  
+  /* Input Row for Phone & Email */
+  .input-row {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .input-row div {
+    flex: 1;
+  }
+  
+  
+  /* Button Hover */
+  .form-container .book-button {
+    margin-top: 2.5rem;
+    width: 13rem;
+    height: 3.5rem;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: white;
+    background-color: #CC76A1;
+    border: none;
+    padding: 13px, 40px, 13px, 40px;
+  }
+  
+  .date-picker {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}

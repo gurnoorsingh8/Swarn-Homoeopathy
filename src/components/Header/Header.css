@@ -1,0 +1,46 @@
+.header-title {
+    font-size: 2rem;
+    padding-top: 24px;
+    padding-left: 50px;
+    display: flex; 
+    
+    img {
+        width: 3rem;
+        height: 3rem;
+        padding-right: 1rem;
+    }
+    
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.header-content {
+    font-size: 1.1rem;
+    padding-top: 1vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header-options {
+        &:hover {
+            color: #CC76A1;
+            cursor: pointer;
+        }
+    }
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: 40rem 40rem;
+    grid-gap: 5rem;
+    border-bottom: 1px solid black;
+    color: white;
+    height: 12vh;
+    background-color: #3E517A;
+}
+
+.active-btn {
+    font-size: 1.2rem;
+    color: #CC76A1;
+}

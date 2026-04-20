@@ -1,0 +1,25 @@
+.book-online-container {
+    background-color: #e7ebf5;
+
+    .book-online-content {
+        padding: 5rem 10rem;
+
+        .book-online-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: black;
+            padding-bottom: 2rem;
+        }
+        .book-online-description {
+            font-size: 20px;
+            font-weight: 400;
+            color: black;
+        }
+
+        .book-online-form {
+            margin-top: 2rem;
+            background-color: white;
+
+        }
+    }
+}

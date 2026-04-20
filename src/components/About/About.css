@@ -1,0 +1,129 @@
+
+.doctor-info-container {
+    background-color: #e7ebf5;
+
+    .doctor-info {
+        padding: 5rem 10rem;
+
+        .doctor-info-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .doctor-image {
+                width: 40%;
+
+                img {
+                    width: 360px;
+                    height: 360px;
+                    border-radius: 15px;
+                    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+                    object-fit: cover;
+                }
+            }
+
+            .doctor-details {
+                width: 60%;
+                
+                .doctor-info-title {
+                    font-size: 2rem;
+                    font-weight: 700;
+                    color: black;
+                }
+
+                .doctor-name {
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                    color: black;
+                }
+                
+                .doctor-education {
+                    font-size: 0.9rem;
+                    font-weight: 400;
+                    color: gray;
+                }
+                
+                .doctor-specialization {
+                    font-size: 0.9rem;
+                    font-weight: 400;
+                    color: gray;
+                    margin-bottom: 1rem;
+
+                }
+
+                .doctor-description {
+                    font-size: 1rem;
+                    font-weight: 400;
+                    color: black;
+                    margin-bottom: 1rem;
+                }
+            }
+
+        }
+        .doctor-description-continue {
+            padding-top: 1rem;
+            font-size: 24px;
+            font-weight: 500;
+            color: rgba(62, 81, 122, 1);
+        }
+    }
+    
+}
+
+.clinic-info-container {
+    background-color: #C3CFEA;
+
+    .clinic-info {
+        padding: 3rem 10rem 0 10rem;
+        text-align: center;
+
+        .clinic-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: black;
+            padding-bottom: 2rem;
+        }
+    
+        .clinic-description {
+            font-size: 1rem;
+            font-weight: 400;
+            color: black;
+        }
+    }
+
+    .clinic-images-carousel-container {
+        padding: 5rem 3rem;
+
+        .clinic-images-carousel {
+            display: flex;
+            justify-content: center;
+
+            .clinic-images {
+                width: 70%;
+                height: 500px;
+                border-radius: 15px;
+                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.services-info-container {
+    background-color: #e7ebf5;
+
+    .services-info {
+        padding: 5rem 10rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+
+        .services-title {
+            
+            width: 60%;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3E517A;
+        }
+    }
+}
