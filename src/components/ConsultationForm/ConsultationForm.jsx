@@ -23,7 +23,7 @@ export default function ConsultationForm() {
     setMessage("");
 
     try {
-      const response = await fetch("http://localhost:3001/api/send-consultation", {
+      const response = await fetch("/.netlify/functions/send-consultation", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
